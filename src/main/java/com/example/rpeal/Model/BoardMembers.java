@@ -17,12 +17,22 @@ public class BoardMembers {
     private String nameOfTheBoardMember;
     private String relatedCompanies;
     private String relation;
+//    private String position;
 
 
     /*************/
 
 
+//    public String getPosition() {
+//        return position;
+//    }
+//
+//    public void setPosition(String position) {
+//        this.position = position;
+//    }
+
     /**Getters And Setters**/
+
     public Long getId() {
         return id;
     }
@@ -58,7 +68,9 @@ public class BoardMembers {
 
     /**************************/
 
-    /**To String**/
+    /**
+     * To String
+     **/
     @Override
     public String toString() {
         return "BoardMembers{" +

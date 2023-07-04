@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ExecutiveManagementRepo extends JpaRepository<ExecutiveManagement, Long> {
+
+    ExecutiveManagement findByNameOfEmployeeAndCurrentPosition(String name, String position);
+
 }

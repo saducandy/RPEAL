@@ -10,5 +10,8 @@ import java.util.List;
 public interface AffiliatedCompanyRepo extends JpaRepository<AffiliatedCompany, Long> {
 
     List<AffiliatedCompany> findByAffiliateIdAndAffiliateName(Long id, String name);
+    List<AffiliatedCompany> findByAffiliateNameAndAffiliatePosition(String name, String position);
+
+    List<AffiliatedCompany> findByAffiliateIdAndAffiliatePosition(Long id, String position);
 
 }

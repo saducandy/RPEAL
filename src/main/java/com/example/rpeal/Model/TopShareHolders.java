@@ -20,12 +20,32 @@ public class TopShareHolders {
     private String nameOfSpouse;
     private double shareAmountOfTheSpouse;
     private int numberOfChildren;
+    private int numberOfAC;
+//    private String position;
 
 
     /**********************/
 
 
+//    public String getPosition() {
+//        return position;
+//    }
+//
+//    public void setPosition(String position) {
+//        this.position = position;
+//    }
+
+    public int getNumberOfAC() {
+        return numberOfAC;
+    }
+
+    public void setNumberOfAC(int numberOfAC) {
+        this.numberOfAC = numberOfAC;
+    }
+
     /**Getter and Setters**/
+
+
     public Long getId() {
         return id;
     }
@@ -77,7 +97,9 @@ public class TopShareHolders {
 
     /**************************/
 
-    /**ToString**/
+    /**
+     * ToString
+     **/
     @Override
     public String toString() {
         return "TopShareHolders{" +
@@ -87,6 +109,7 @@ public class TopShareHolders {
                 ", nameOfSpouse='" + nameOfSpouse + '\'' +
                 ", shareAmountOfTheSpouse=" + shareAmountOfTheSpouse +
                 ", numberOfChildren=" + numberOfChildren +
+                ", numberOfAC=" + numberOfAC +
                 '}';
     }
 

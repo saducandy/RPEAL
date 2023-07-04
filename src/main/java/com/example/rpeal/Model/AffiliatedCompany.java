@@ -16,12 +16,22 @@ public class AffiliatedCompany {
     private long affiliateId;
     @Column(nullable = true)
     private double shareAmount;
+    private String affiliatePosition;
 
 
 
     /************/
 
+    public String getAffiliatePosition() {
+        return affiliatePosition;
+    }
+
+    public void setAffiliatePosition(String affiliatePosition) {
+        this.affiliatePosition = affiliatePosition;
+    }
+
     /**Getter And Setters**/
+
     public Long getId() {
         return id;
     }
@@ -65,15 +75,18 @@ public class AffiliatedCompany {
 
     /************************/
 
-    /**To string**/
+    /**
+     * To string
+     **/
     @Override
     public String toString() {
         return "AffiliatedCompany{" +
                 "id=" + id +
                 ", companyName='" + companyName + '\'' +
-                ", affiliatePosition='" + affiliateName + '\'' +
-                ", affiliateId='" + affiliateId + '\'' +
+                ", affiliateName='" + affiliateName + '\'' +
+                ", affiliateId=" + affiliateId +
                 ", shareAmount=" + shareAmount +
+                ", affiliatePosition='" + affiliatePosition + '\'' +
                 '}';
     }
 

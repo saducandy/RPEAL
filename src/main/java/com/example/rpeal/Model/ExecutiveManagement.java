@@ -1,9 +1,6 @@
 package com.example.rpeal.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class ExecutiveManagement {
@@ -19,13 +16,24 @@ public class ExecutiveManagement {
     private String currentPosition;
     private String nameOfSpouse;
     private int numberOfChildren;
+    private int numberOfAC;
 
 
 
     /**************************/
 
 
+    public int getNumberOfAC() {
+        return numberOfAC;
+    }
+
+    public void setNumberOfAC(int numberOfAC) {
+        this.numberOfAC = numberOfAC;
+    }
+
     /**Getters and Setters**/
+
+
     public Long getId() {
         return id;
     }
@@ -70,7 +78,9 @@ public class ExecutiveManagement {
     /**************************/
 
 
-    /**To String**/
+    /**
+     * To String
+     **/
     @Override
     public String toString() {
         return "ExecutiveManagement{" +
@@ -79,11 +89,12 @@ public class ExecutiveManagement {
                 ", currentPosition='" + currentPosition + '\'' +
                 ", nameOfSpouse='" + nameOfSpouse + '\'' +
                 ", numberOfChildren=" + numberOfChildren +
+                ", numberOfAC=" + numberOfAC +
                 '}';
     }
 
 
-    /*****************/
+    /****************/
 
 
 }

@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TopShareHoldersRepo extends JpaRepository<TopShareHolders, Long> {
+
+    TopShareHolders findByNameOfShareHolder(String name);
+
 }

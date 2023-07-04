@@ -10,5 +10,9 @@ import java.util.List;
 public interface ChildrenRepo extends JpaRepository<Children, Long> {
 
     List<Children> findByFullNameOfTheFatherAndParentsId(String name, Long id);
+    List<Children> findByFullNameOfTheFatherAndParentsPosition(String name, String position);
+
+    List<Children> findByParentsIdAndParentsPosition(Long id, String position);
+
 
 }
