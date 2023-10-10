@@ -5,16 +5,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
-public class TopShareHolders {
+import java.time.ZonedDateTime;
 
+@Entity
+public class TSHHistory {
 
     /**defining Fields**/
 
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+
+
+    private Long userId;
     private String nameOfShareHolder;
     private double shareAmountOfTheHolder;
     private String nameOfSpouse;
@@ -22,6 +23,13 @@ public class TopShareHolders {
     private int numberOfChildren;
     private int numberOfAC;
     private String position;
+
+    private String action;
+    private ZonedDateTime date;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
 
     /**********************/
@@ -46,12 +54,29 @@ public class TopShareHolders {
     /**Getter and Setters**/
 
 
-    public Long getId() {
-        return id;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserId(Long id) {
+        this.userId = id;
+    }
+
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public ZonedDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(ZonedDateTime date) {
+        this.date = date;
     }
 
     public String getNameOfShareHolder() {
@@ -94,6 +119,13 @@ public class TopShareHolders {
         this.numberOfChildren = numberOfChildren;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long historyId) {
+        this.id = historyId;
+    }
 
     /**************************/
 
@@ -102,8 +134,8 @@ public class TopShareHolders {
      **/
     @Override
     public String toString() {
-        return "TopShareHolders{" +
-                "id=" + id +
+        return "TSHHistory{" +
+                "id=" + userId +
                 ", nameOfShareHolder='" + nameOfShareHolder + '\'' +
                 ", shareAmountOfTheHolder=" + shareAmountOfTheHolder +
                 ", nameOfSpouse='" + nameOfSpouse + '\'' +
@@ -111,6 +143,9 @@ public class TopShareHolders {
                 ", numberOfChildren=" + numberOfChildren +
                 ", numberOfAC=" + numberOfAC +
                 ", position='" + position + '\'' +
+                ", action='" + action + '\'' +
+                ", date=" + date +
+                ", historyId=" + id +
                 '}';
     }
 

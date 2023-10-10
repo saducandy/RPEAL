@@ -5,19 +5,26 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
-public class BoardMembers {
+import java.time.ZonedDateTime;
 
+@Entity
+public class DeletedBM {
 
     /**fields**/
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+
     private Long id;
     private String nameOfTheBoardMember;
     private String relatedCompanies;
     private String relation;
     private String position;
+    private String action;
+    private ZonedDateTime date;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long deletionId;
 
 
     /*************/
@@ -31,7 +38,25 @@ public class BoardMembers {
         this.position = position;
     }
 
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public ZonedDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(ZonedDateTime date) {
+        this.date = date;
+    }
+
     /**Getters And Setters**/
+
+
 
     public Long getId() {
         return id;
@@ -65,6 +90,13 @@ public class BoardMembers {
         this.relation = relation;
     }
 
+    public Long getDeletionId() {
+        return deletionId;
+    }
+
+    public void setDeletionId(Long historyId) {
+        this.deletionId = historyId;
+    }
 
     /**************************/
 
@@ -73,12 +105,15 @@ public class BoardMembers {
      **/
     @Override
     public String toString() {
-        return "BoardMembers{" +
+        return "BMHistory{" +
                 "id=" + id +
                 ", nameOfTheBoardMember='" + nameOfTheBoardMember + '\'' +
                 ", relatedCompanies='" + relatedCompanies + '\'' +
                 ", relation='" + relation + '\'' +
                 ", position='" + position + '\'' +
+                ", action='" + action + '\'' +
+                ", date=" + date +
+                ", historyId=" + deletionId +
                 '}';
     }
 

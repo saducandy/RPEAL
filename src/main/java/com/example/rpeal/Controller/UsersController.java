@@ -1,16 +1,22 @@
 package com.example.rpeal.Controller;
 
+import com.example.rpeal.Model.AffiliatedCompany;
+import com.example.rpeal.Model.Children;
+import com.example.rpeal.Model.TopShareHolders;
 import com.example.rpeal.Model.Users;
 import com.example.rpeal.Repository.UsersRepo;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import netscape.javascript.JSObject;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -68,7 +74,7 @@ public class UsersController {
 
     }
 
-    @GetMapping("login")
+    @PostMapping("login")
     public ResponseEntity<?> checkUser(@RequestBody ObjectNode objectNode){
 
         String un = objectNode.get("userName").asText();
@@ -142,6 +148,11 @@ public class UsersController {
         }
 
     }
+
+
+
+
+
 
 
 

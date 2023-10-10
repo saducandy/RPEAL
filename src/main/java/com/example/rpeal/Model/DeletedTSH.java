@@ -5,15 +5,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
-public class TopShareHolders {
+import java.time.ZonedDateTime;
 
+@Entity
+public class DeletedTSH {
 
     /**defining Fields**/
 
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+
     private Long id;
     private String nameOfShareHolder;
     private double shareAmountOfTheHolder;
@@ -22,6 +23,13 @@ public class TopShareHolders {
     private int numberOfChildren;
     private int numberOfAC;
     private String position;
+
+    private String action;
+    private ZonedDateTime date;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long deletionId;
 
 
     /**********************/
@@ -52,6 +60,23 @@ public class TopShareHolders {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public ZonedDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(ZonedDateTime date) {
+        this.date = date;
     }
 
     public String getNameOfShareHolder() {
@@ -94,6 +119,13 @@ public class TopShareHolders {
         this.numberOfChildren = numberOfChildren;
     }
 
+    public Long getDeletionId() {
+        return deletionId;
+    }
+
+    public void setDeletionId(Long historyId) {
+        this.deletionId = historyId;
+    }
 
     /**************************/
 
@@ -102,7 +134,7 @@ public class TopShareHolders {
      **/
     @Override
     public String toString() {
-        return "TopShareHolders{" +
+        return "TSHHistory{" +
                 "id=" + id +
                 ", nameOfShareHolder='" + nameOfShareHolder + '\'' +
                 ", shareAmountOfTheHolder=" + shareAmountOfTheHolder +
@@ -111,11 +143,15 @@ public class TopShareHolders {
                 ", numberOfChildren=" + numberOfChildren +
                 ", numberOfAC=" + numberOfAC +
                 ", position='" + position + '\'' +
+                ", action='" + action + '\'' +
+                ", date=" + date +
+                ", historyId=" + deletionId +
                 '}';
     }
 
 
     /******************/
+
 
 
 }
